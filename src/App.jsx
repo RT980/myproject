@@ -23,8 +23,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/menu' element={<Menu/>}/>
-        <Route path='/productdescription' element={<ProductDescription/>}/>
         <Route path='/service' element={<Service/>}/>
+        <Route path='/productDescription' element={<ProductDescription/>}/>
       </Routes>
       
     </div>
