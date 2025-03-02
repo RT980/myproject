@@ -9,6 +9,9 @@ import ProductDescription from './Pages/ProductDescription'
 import Service from './Pages/Service'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './NavBar/Navigation'
+import Payment from './Pages/Payment'
+import Success from './Payment/Success'
+import Failure from './Payment/Failure'
 
 
 function App() {
@@ -24,7 +27,10 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/menu' element={<Menu/>}/>
         <Route path='/service' element={<Service/>}/>
-        <Route path='/productDescription' element={<ProductDescription/>}/>
+        <Route path="/productDescription/:id" element={<ProductDescription />} />
+        <Route path='/payment' element={<Payment/>}/>
+        <Route path='/success' element={<Success/>}/>
+        <Route path='/failure' element={<Failure/>}/>
       </Routes>
       
     </div>

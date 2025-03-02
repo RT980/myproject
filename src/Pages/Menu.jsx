@@ -49,7 +49,7 @@ function Menu() {
         </h1>
         <div className="flex p-[30px] flex-wrap gap-8 justify-center">
       {product.length > 0 ? (
-        <div className="border-2 border-red-500  flex flex-wrap justify-center gap-5 px-20 py-5">
+        <div className=" flex flex-wrap justify-center gap-5 px-20 py-5">
           <div className="flex p-[30px] flex-wrap gap-8 justify-center">
           {product.map((item) => {
             return (
