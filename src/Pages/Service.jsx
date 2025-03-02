@@ -11,6 +11,7 @@ import party from "../assets/Services/party.png"
 import qr from "../assets/Services/qr.png"
 import first from "../assets/Services/first.png"
 import chef from "../assets/Services/chef.png"
+import { NavLink } from "react-router-dom";
 function Service() {
   return (
     <div>
@@ -67,7 +68,9 @@ function Service() {
       <div className='h-[300px] w-[1070px] bg-gray-100 flex flex-col justify-center items-center mt-[20px] ml-[110px] rounded-[24px]'>
         <h1 className='text-[31px] font-bold'>Got any Queries?</h1>
         <p className='text-[16px] text-gray-500 mt-[10px]'>If you have any queries, send us a message. Our Friendly team would love to hear from you</p>
+        <NavLink to={`/contact`}>
         <button className='h-[60px] w-[220px] rounded-[100px] bg-teal-700 text-white text-[16px] mt-[40px] hover:bg-teal-900'>Get In Touch</button>
+        </NavLink>
       </div>
         <div className='mt-[40px] h-[400px] bg-gray-100 p-[50px]'>
               <div className='flex justify-between items-center w-[1128px] h-[200px]'>

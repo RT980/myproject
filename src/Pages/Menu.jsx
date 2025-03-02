@@ -4,7 +4,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import qr from "../assets/Allergy/qr.png";
 import { FaMobileScreenButton } from "react-icons/fa6";
-
+import { FcRating } from "react-icons/fc";
 function Menu() {
   const [product, setProduct] = useState([]);
   const getData = async () => {
@@ -50,27 +50,41 @@ function Menu() {
         <div className="flex p-[30px] flex-wrap gap-8 justify-center">
       {product.length > 0 ? (
         <div className="border-2 border-red-500  flex flex-wrap justify-center gap-5 px-20 py-5">
+          <div className="flex p-[30px] flex-wrap gap-8 justify-center">
           {product.map((item) => {
             return (
               <div
                 key={item.name}
-                className="flex justify-center flex-col shadow-gray-800 shadow-2xl rounded-2xl p-1 h-48 w-48 items-center"
+                className="border border-gray-400 h-[420px] w-[340px] flex flex-col justify-center items-center shadow-2xl shadow-gray-700 rounded-[20px]"
               >
                 <NavLink key={item.name} to={`/productDescription/${item.id}`}>
-                  <img className="h-28 rounded-2xl" src={item.image} alt="" />
-                  <h1>{item.name}</h1>
-                  <h1>Rs.{item.caloriesPerServing}</h1>
+                  <img className="h-[240px] rounded-2xl " src={item.image} alt="" />
+                  <h1 className="mt-[20px] font-bold flex flex-col items-center">{item.name}</h1>
+                  <h1 className="flex justify-center items-center">
+                  <span className="flex items-center gap-2">  Rating:  4.6 <FcRating className="h-[20px] w-[20px]"/></span>
+                  </h1>
+                  <h1 className="text-red-600 flex flex-col items-center">Rs.{item.caloriesPerServing}</h1>
+
+                  <button className="mt-[10px] h-[50px] w-[150px] rounded-[50px] bg-orange-500 text-white hover:bg-amber-700  ml-[50px]">
+                  View More
+                  </button>
                 </NavLink>
               </div>
+              
             );
           })}
         </div>
+        </div>
+        
       ) : (
         <div>
           <h1>Loading</h1>
         </div>
+        
       )}
+      
       </div>
+      
       </div>
     </div>
     </div>

@@ -19,9 +19,11 @@ function Home() {
                 <span className='text-orange-600'> 20+ Varieties </span>
                   of momo avilable for you
               </h1>
+              <NavLink to={`/menu`}>
               <button className="flex justify-center items-center h-[55px] w-[220px] rounded-[50px] bg-teal-900 text-white hover:bg-teal-950 mt-[40px]">
               Explore food menu
               </button>
+              </NavLink>
           </div>
           <div className='flex'>
           <div>
