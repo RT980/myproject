@@ -4,25 +4,25 @@ import { MdDelete } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function CartPage() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { state, dispatch } = useContext(CartContext);
   console.log(state);
 
-const totalAmount=state.cartItems.reduce((acc,item)=>{
-  return acc+item.qty*item.caloriesPerServing
+  const totalAmount = state.cartItems.reduce((acc, item) => {
+    return acc + item.qty * item.caloriesPerServing
 
-},0)
-const totalItem=state.cartItems.reduce((acc,item)=>{
-  return acc+item.qty
-},0)
-console.log(totalAmount)
+  }, 0)
+  const totalItem = state.cartItems.reduce((acc, item) => {
+    return acc + item.qty
+  }, 0)
+  console.log(totalAmount)
 
 
   return (
     <div>
       <div>
-        {state.cartItems.length>0 ? (
+        {state.cartItems.length > 0 ? (
           <div className="border-red-500  border-2  flex">
             <div className="w-[900px]">
               {state.cartItems.map((item) => {
@@ -49,7 +49,7 @@ console.log(totalAmount)
                           }}
                         >
                           <MdDelete color="red" size={30} />
-                        </button>
+                        </button>
                       </div>
                       <div className=" h-14 space-x-4 ">
 
@@ -94,33 +94,33 @@ console.log(totalAmount)
               </h1> */}
               <h1>Total {totalAmount}</h1>
               <button
-              onClick={()=>{
-                navigate("/payment",{state:{totalAmount:totalAmount,totalItem:totalItem}})
-              }}
-              className="bg-orange-600 p-3 text-white"  >
+                onClick={() => {
+                  navigate("/payment", { state: { totalAmount: totalAmount, totalItem: totalItem } })
+                }}
+                className="bg-orange-600 p-3 text-white"  >
                 Procced to CheckOut ({totalItem})
-                </button>
-                <button 
-                onClick={()=>{
-                  dispatch({type:"ClearCart"})
+              </button>
+              <button
+                onClick={() => {
+                  dispatch({ type: "ClearCart" })
                 }}
                 className="bg-orange-600 p-3 text-white"  >
                 Clear Cart
-                </button>
+              </button>
             </div>
           </div>
         ) : (
           <div className=" w-96 h-96 m-auto mt-16 flex flex-col justify-center items-center">
 
             <img className="h-32" src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-illustration-download-in-svg-png-gif-file-formats--state-no-items-zero-page-added-states-pack-design-development-illustrations-4610092.png?f=webp" alt="" />
-            
+
             <p className="font-mono">
-              Item Not Found On Cart 
+              Item Not Found On Cart
               <NavLink to={"/menu"} className="underline text-xl text-red-600 font-bold">
-                  Shop Now
+                Shop Now
               </NavLink>
             </p>
-            </div>
+          </div>
         )}
       </div>
     </div>

@@ -5,8 +5,15 @@ import { FaFacebook } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import React, { useContext } from "react";
+import { CartContext } from "../Context/CartContext/CartProvider"
 
 function Navigation() {
+  const { state } = useContext(CartContext);
+
+  const totalCartItem = state.cartItem.reduce((acc, item) => {
+    return acc + item.qty;
+  }, 0);
   return (
     <div className='flex flex-row justify-around item-center bg-white shadow-2xs shadow-gray-300'>
       <NavLink to={'/'} className="flex flex-row items-center gap-3 text-[#0C6967] text-[26px] font-bold">
@@ -17,8 +24,8 @@ function Navigation() {
       <NavLink to={'/menu'}>Our Menu</NavLink>
       <NavLink to={'/service'}>Our Service</NavLink>
       <NavLink to={'/allergy'}>Allergy Advice</NavLink>
-      {/* <NavLink to="/cartPage"> <span>{totalItem}</span><AiOutlineShoppingCart size={25}  /></NavLink> */}
-      <NavLink to="/cartPage"><AiOutlineShoppingCart size={30}  /></NavLink>
+      <NavLink to="/cartPage"> <span>{totalCartItem}</span><AiOutlineShoppingCart size={25}  /></NavLink>
+      {/* <NavLink to="/cartPage"><AiOutlineShoppingCart size={30}  /></NavLink> */}
       </div>
 
     
