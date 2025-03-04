@@ -17,7 +17,7 @@ function Navigation() {
       <NavLink to={'/menu'}>Our Menu</NavLink>
       <NavLink to={'/service'}>Our Service</NavLink>
       <NavLink to={'/allergy'}>Allergy Advice</NavLink>
-      {/* <NavLink to="/cartPage"> <span>{totalCartItems}</span><AiOutlineShoppingCart size={25}  /></NavLink> */}
+      {/* <NavLink to="/cartPage"> <span>{totalItem}</span><AiOutlineShoppingCart size={25}  /></NavLink> */}
       <NavLink to="/cartPage"><AiOutlineShoppingCart size={30}  /></NavLink>
       </div>
 
