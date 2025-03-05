@@ -3,7 +3,27 @@ import { NavLink } from 'react-router-dom'
 import momo from "../assets/Image/momo.png"
 import ellips from "../assets/Image/ellips.png"
 import man from "../assets/Image/man.png"
+import { useState, useEffect } from "react";
 function Home() {
+  const [product, setProduct] = useState([]);
+  const [filterItems, setFilterItems] = useState([])
+  const getData = async () => {
+    let response = await fetch("https://dummyjson.com/recipes");
+    response = await response.json();
+    console.log(response.recipes);
+    setProduct(response.recipes);
+    filterProduct("American")
+  };
+
+  const filterProduct = (countary) => {
+    const products = product.filter((item) => {
+      return item.cuisine === countary;
+    })
+    setFilterItems(products);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div>
         <div className='h-[650px]'>
@@ -66,11 +86,66 @@ function Home() {
             Browse through a varieties of recipes with fresh ingredients selected only from the best places
             </p>
           </div>
-          <div className='flex justify-center items-center mt-[40px] gap-[40px]'>
-            <button className='border-2 border-gray-500 w-[125px] h-[50px] rounded-[50px]'>Buff</button>
-            <button className='border-2 border-gray-500 w-[125px] h-[50px] rounded-[50px] '>Chicken</button>
-            <button className='border-2 border-gray-500 w-[125px] h-[50px] rounded-[50px]'>Veg</button>
+          <div className="  m-5  p-5  "  >
+        <div className="flex  justify-center gap-4"  >
+          <button
+
+            onClick={() => {
+              filterProduct("American")
+            }}
+
+            className="border-1 border-black  rounded-4xl p-1"    >American</button>
+          <button
+            onClick={() => {
+              filterProduct("Italian")
+            }}
+            className="border-1 border-black  rounded-4xl p-1"   >Italian</button>
+          <button
+            onClick={() => {
+              filterProduct("Asian")
+            }}
+            className="border-1 border-black  rounded-4xl p-1"   >Asian</button>
+
+
+           <button
+            onClick={() => {
+              filterProduct("Mexican")
+            }}
+            className="border-1 border-black  rounded-4xl p-1"   >Mexican</button>
+
+          <button
+            onClick={() => {
+              filterProduct("Pakistani")
+            }}
+            className="border-1 border-black  rounded-4xl p-1"   >Pakistani</button>
+
+          <button
+            onClick={() => {
+              filterProduct("Japanese")
+            }}
+            className="border-1 border-black  rounded-4xl p-1"   >Japanese</button>
+
+        </div>
+        
+      </div>
+
+      <div>
+        {filterItems.length>0?(
+          <div className=" flex flex-wrap justify-center">
+            {filterItems.map((item)=>{
+              return (
+                <div key={item.id} className="shadow-2xl shadow-gray-700 py-3 rounded-2xl flex flex-col justify-center items-center m-5 w-80">
+                  <img src={item.image} alt="" className="h-32" />
+                  <h1>Cuisine type: {item.cuisine}</h1>
+                  <h1>Name:{item.name}</h1>
+                </div>
+              )
+            })}
           </div>
+        ):(
+          <div>Loading....</div>
+        )}
+      </div>
         </div>
       </div>
 
