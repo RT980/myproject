@@ -7,6 +7,7 @@ import { AiFillTikTok } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext/CartProvider"
+import { CgProfile } from "react-icons/cg";
 
 function Navigation() {
   const {state,dispatch}=useContext(CartContext)
@@ -37,7 +38,7 @@ function Navigation() {
       <NavLink to="https://www.tiktok.com/" target="_blank"><AiFillTikTok size={35}/></NavLink>
       <NavLink to="https://www.instagram.com/" target="_blank"><FaSquareInstagram size={35}/></NavLink>
       <NavLink to="/contact" className="border h-[40px] w-[120px] rounded-[50px] bg-orange-500 hover:bg-orange-800 text-white pl-4 pt-2">Contact Us</NavLink>
-      <NavLink to="/profile">Profile</NavLink>
+      <NavLink to="/profile"><CgProfile  size={30}/></NavLink>
       </div>
     </div>
   )

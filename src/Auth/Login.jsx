@@ -7,7 +7,7 @@ function Login() {
     <div>
       <form  className="shadow-2xl  space-y-3  shadow-black w-[500px] 
        m-auto  mt-20 rounded-2xl p-5 flex    pl-20  flex-col"  >
-        <label htmlFor="Email">Password</label>
+        <label htmlFor="Email">Email</label>
         <input type="Email"  className="  p-2 rounded-2xl  outline-none  border-2 border-black   w-72"  placeholder="Enter Your Email" />
         <label htmlFor="password">Password</label>
         <input type="password" className="  p-2 rounded-2xl outline-none border-black border-2   w-72"  id="" placeholder="Enter Your Password" />
