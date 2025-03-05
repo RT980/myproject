@@ -28,7 +28,7 @@ function Navigation() {
       <NavLink to={'/service'}>Our Service</NavLink>
       <NavLink to={'/allergy'}>Allergy Advice</NavLink>
       <NavLink to="/login">Login</NavLink>
-      <NavLink to="/cartPage"> <span>{totalCartItems}</span><AiOutlineShoppingCart size={25``}  /></NavLink>
+      <NavLink to="/cartPage"> <span>{totalCartItems}</span><AiOutlineShoppingCart size={25}  /></NavLink>
       </div>
 
     
