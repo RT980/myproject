@@ -26,6 +26,7 @@ function Navigation() {
       <NavLink to={'/menu'}>Our Menu</NavLink>
       <NavLink to={'/service'}>Our Service</NavLink>
       <NavLink to={'/allergy'}>Allergy Advice</NavLink>
+      <NavLink to="/login">Login</NavLink>
       <NavLink to="/cartPage"> <span>{totalCartItems}</span><AiOutlineShoppingCart size={25}  /></NavLink>
       {/* <NavLink to="/cartPage"><AiOutlineShoppingCart size={30}  /></NavLink> */}
       </div>
@@ -36,6 +37,7 @@ function Navigation() {
       <NavLink to="https://www.tiktok.com/" target="_blank"><AiFillTikTok size={35}/></NavLink>
       <NavLink to="https://www.instagram.com/" target="_blank"><FaSquareInstagram size={35}/></NavLink>
       <NavLink to="/contact" className="border h-[40px] w-[120px] rounded-[50px] bg-orange-500 hover:bg-orange-800 text-white pl-4 pt-2">Contact Us</NavLink>
+      <NavLink to="/profile">Profile</NavLink>
       </div>
     </div>
   )

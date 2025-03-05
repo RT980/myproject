@@ -12,6 +12,8 @@ import Navigation from './NavBar/Navigation'
 import Payment from './Pages/Payment'
 import Success from './Payment/Success'
 import Failure from './Payment/Failure'
+import Login from './Auth/Login'
+import Profile from './Pages/Profile'
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path='/payment' element={<Payment/>}/>
         <Route path='/success' element={<Success/>}/>
         <Route path='/failure' element={<Failure/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
       
     </div>
