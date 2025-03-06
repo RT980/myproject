@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../Context/CartContext/CartProvider";
 import { MdDelete } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
+import empty from "../assets/Cart/empty.webp"
 
 function CartPage() {
   const navigate = useNavigate();
@@ -23,20 +24,20 @@ function CartPage() {
     <div>
       <div>
         {state.cartItems.length > 0 ? (
-          <div className="border-red-500  border-2  flex">
+          <div className=" flex mt-[40px]">
             <div className="w-[900px]">
               {state.cartItems.map((item) => {
                 return (
                   <div key={item.id}>
-                    <div className="  shadow-2xl  shadow-gray-800 rounded-3xl  flex  justify-around  m-5 items-center h-40 ">
+                    <div className="    flex justify-evenly items-center m-5 h-56 rounded-2xl shadow-2xl shadow-black ">
                       <div className=" ">
-                        <img className="h-20  rounded-2xl " src={item.image} alt="" />
+                        <img className="h-40 rounded-2xl " src={item.image} alt="" />
                       </div>
-                      <div className="  h-14 w-64 ">
-                        <h1>{item.name}</h1>
+                      <div className="  h-14  ">
+                        <h1 className="text-[30px]">{item.name}</h1>
                       </div>
-                      <div className=" h-14 w-20 ">
-                        <h1 className="text-red-400 font-bold">
+                      <div className="  h-14 space-y-2 ">
+                        <h1 className=" text-red-500 text-[30px]">
                           Rs.{item.caloriesPerServing}
                         </h1>
 
@@ -48,13 +49,13 @@ function CartPage() {
                             });
                           }}
                         >
-                          <MdDelete color="red" size={30} />
+                          <MdDelete color="red"className="pl-[20px] size-[50px]" />
                         </button>
                       </div>
-                      <div className=" h-14 space-x-4 ">
+                      <div className=" h-14 space-x-2 flex justify-center items-center ">
 
                         <button
-                          className="bg-slate-300 rounded-sm px-2"
+                          className="hover:bg-orange-700 text-[30px] rounded-full bg-black text-white w-5 "
                           onClick={() => {
                             dispatch({
                               type: "Decreament",
@@ -65,10 +66,10 @@ function CartPage() {
                           -
                         </button>
 
-                        <span>{item.qty}</span>
+                        <span className="text-[30px] ">{item.qty}</span>
 
                         <button
-                          className="bg-slate-300 rounded-sm px-2"
+                          className="hover:bg-orange-700 text-[30px] rounded-full bg-black text-white w-5"
                           onClick={() => {
                             dispatch({
                               type: "Increament",
@@ -84,40 +85,38 @@ function CartPage() {
                 );
               })}
             </div>
-            <div className=" gap-y-3 mt-16  w-80 shadow-2xl shadow-gray-500 h-56 rounded-3xl flex flex-col  justify-center  items-center  ">
+            <div className="  rounded-2xl w-96 m-5 shadow-2xl shadow-gray-400 h-72 flex flex-col justify-center items-center gap-y-4 border border-gray-500  ">
               <h1
-
-
-                className="text-2xl">Order Summary
+                className="text-3xl font-bold">Order Summary
               </h1>
               {/* <h1>Subtotal (0 items)
               </h1> */}
-              <h1>Total {totalAmount}</h1>
+              <h1 className="text-[20px]">Total {totalAmount}</h1>
               <button
                 onClick={() => {
                   navigate("/payment", { state: { totalAmount: totalAmount, totalItem: totalItem } })
                 }}
-                className="bg-orange-600 p-3 text-white"  >
+                className="bg-black p-3 text-white rounded-[5px] hover:bg-gray-800"  >
                 Procced to CheckOut ({totalItem})
               </button>
               <button
                 onClick={() => {
                   dispatch({ type: "ClearCart" })
                 }}
-                className="bg-orange-600 p-3 text-white"  >
+                className="bg-orange-600 p-3 text-white rounded-[5px]"  >
                 Clear Cart
               </button>
             </div>
           </div>
         ) : (
-          <div className=" w-96 h-96 m-auto mt-16 flex flex-col justify-center items-center">
+          <div className=" w-96 h-60 m-auto mt-16 flex flex-col justify-center items-center">
 
-            <img className="h-32" src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-illustration-download-in-svg-png-gif-file-formats--state-no-items-zero-page-added-states-pack-design-development-illustrations-4610092.png?f=webp" alt="" />
+            <img className=" w-[400px]" src={empty} alt="" />
 
             <p className="font-mono">
-              Item Not Found On Cart
-              <NavLink to={"/menu"} className="underline text-xl text-red-600 font-bold">
-                Shop Now
+              Item Not Found On Cart 
+                  <NavLink to={"/menu"} className="underline  text-red-600 p-2">
+                   Shop Now
               </NavLink>
             </p>
           </div>

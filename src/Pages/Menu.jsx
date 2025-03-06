@@ -43,7 +43,7 @@ function Menu() {
       </div>
     <div>
       <div className="mt-[40px]">
-        <h1 className="text-[50px] font-bold text-orange-500 flex justify-center gap-4 underline">
+        <h1 className="text-[50px] font-bold text-orange-500 flex justify-center gap-4 ">
         Our 
         <span className="text-black">Menu</span>
         </h1>

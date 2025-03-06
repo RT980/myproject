@@ -100,12 +100,13 @@ let totalItem = info.state.totalItem;
         <div className="shadow-2xl shadow-black mt-10 p-5 rounded-2xl">
           <h1> Total Amount : NRs.{totalAmount}</h1>
           <h1>Total Item :{totalItem}</h1> 
-        </div>
-        <input 
+          <input 
         
-        className="bg-orange-500 rounded-2xl py-2 px-3"
+        className="bg-orange-500 rounded-2xl py-2 px-3 ml-10 mt-4 text-white"
         value="Payment" 
         type="submit" /> 
+        </div>
+        
       </form>
     </div>
   );

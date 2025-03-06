@@ -4,7 +4,7 @@ import image from "../assets/Image/image.png"
 import { FaFacebook } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsCart4 } from "react-icons/bs";
 import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext/CartProvider"
 import { CgProfile } from "react-icons/cg";
@@ -27,16 +27,17 @@ function Navigation() {
       <NavLink to={'/menu'}>Our Menu</NavLink>
       <NavLink to={'/service'}>Our Service</NavLink>
       <NavLink to={'/allergy'}>Allergy Advice</NavLink>
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/cartPage"> <span>{totalCartItems}</span><AiOutlineShoppingCart size={25}  /></NavLink>
+      
+      <NavLink to="/cartPage" className=" text-gray-500"> <span className='absolute ml-[20px] top-[5px] z-50 text-white border w-[25px] flex justify-center bg-red-500 rounded-[50px]'>{totalCartItems}</span><BsCart4 size={35}  /></NavLink>
       </div>
 
     
-    <div className='flex flex-row item-center gap-3 font-bold m-5'>
-    <NavLink to="https://www.facebook.com/login.php/" target="_blank"><FaFacebook size={30} className='hover:to-blue-600'/></NavLink>
-      <NavLink to="https://www.tiktok.com/" target="_blank"><AiFillTikTok size={30}/></NavLink>
-      <NavLink to="https://www.instagram.com/" target="_blank"><FaSquareInstagram size={30}/></NavLink>
+    <div className='flex space-x-[20px] mt-[8px] justify-center items-center'>
+    <NavLink to="https://www.facebook.com/login.php/" target="_blank"><FaFacebook size={30} className='hover:text-blue-500'/></NavLink>
+      <NavLink to="https://www.tiktok.com/" target="_blank"><AiFillTikTok size={35} className='hover:text-black'/></NavLink>
+      <NavLink to="https://www.instagram.com/" target="_blank"><FaSquareInstagram size={30} className='hover:text-red-500'/></NavLink>
       <NavLink to="/contact" className="border h-[40px] w-[120px] rounded-[50px] bg-orange-500 hover:bg-orange-800 text-white pl-4 pt-2">Contact Us</NavLink>
+      <NavLink to="/login" className="border h-[40px] w-[120px] rounded-[50px] bg-blue-500 hover:bg-blue-800 text-white pl-10 pt-2">Login</NavLink>
       <NavLink to="/profile"><CgProfile  size={30}/></NavLink>
       </div>
     </div>

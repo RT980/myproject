@@ -2,7 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../Context/CartContext/CartProvider";
 import { FcRating } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 function ProductDescription() {
+const navigate=useNavigate()
 
 const {dispatch}=useContext(CartContext)
   const { id } = useParams();
@@ -36,9 +38,9 @@ const {dispatch}=useContext(CartContext)
            
             <div className=" flex  justify-around p-5  flex-col items-center ">
               
-              <h1 className="text-[40px] flex justify-center mt-[40px] text-black">{product.name}</h1>
-              <p className="flex flex-col justify-center items-center text-[25px]"> Cuisine: {product.cuisine}</p>
-              <p className=" flex flex-col justify-center items-center text-[25px]">Rating : {product.rating }</p>
+              <h1 className="text-[40px]  mt-[40px] text-black">{product.name}</h1>
+              <p className="text-[25px]"> Cuisine: {product.cuisine}</p>
+              <p className="  text-[25px]">Rating : {product.rating }</p>
               <p className="text-[25px] text-red-500">Rs.{product.caloriesPerServing}</p>
               
               <div>
@@ -48,7 +50,13 @@ const {dispatch}=useContext(CartContext)
               </div>
              
               <div>
-                <button className="bg-sky-600   p-3 m-2 text-white hover:bg-sky-700 rounded-[6px]">
+                <button
+                
+                onClick={()=>{
+                  navigate("/payment",{state:{totalAmount:product.caloriesPerServing,totalItem: 1}})
+                }}
+                
+                className="bg-sky-600   p-3 m-2 text-white hover:bg-sky-700 rounded-[6px]">
                   Buy Now{" "}
                 </button>
                 <button
@@ -74,7 +82,7 @@ const {dispatch}=useContext(CartContext)
               <h1 className="text-2xl font-bold mb-2 ">Ingredients:</h1>
               <div className="space-y-4">
                 {ingredients.length > 0 && (
-                  <div className=" flex flex-col font-semibold ">
+                  <div className=" flex flex-col font-semibold marker:text-black">
                     {ingredients.map((item, index) => {
                       return <div key={index}>{item}</div>;
                     })}
@@ -87,7 +95,7 @@ const {dispatch}=useContext(CartContext)
               <h1 className="text-2xl font-bold m-2">Instructions :</h1>
               <div className="flex flex-col gap-2">
                 <p className="text-[17px] flex gap-1">
-                  <span className="font-semibold">Preparation Time :</span>
+                  <span className="font-semibold ">Preparation Time :</span>
                   15
                   min
                 </p>
