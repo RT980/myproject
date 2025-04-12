@@ -23,7 +23,7 @@ function Menu() {
         Our Menu
         </h1>
         <p className="text-[31px] text-orange-600 flex flex-col items-center font-bold">
-        Our menu is more than just momos,
+        Our menu is more than just foods,
         <span className="text-black"> with a variety of dishes to cater to all tastes and preferences.</span>
         </p>
         <div className="flex justify-center">
