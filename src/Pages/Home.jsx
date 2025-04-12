@@ -32,12 +32,12 @@ function Home() {
               <p className='font-bold text-[50px]'>The
                 <span className='bg-[url(assets\Image\one.png)] bg-center bg-cover '> #One </span>
               </p>
-              <p className='font-bold text-[50px]'>Momo
+              <p className='font-bold text-[50px]'>Food
                 <span className='text-orange-600 '> Resturant</span>
               </p>
               <h1 className='font-bold text-[20px]'>More then
                 <span className='text-orange-600'> 20+ Varieties </span>
-                  of momo avilable for you
+                  of Items avilable for you
               </h1>
               <NavLink to={`/menu`}>
               <button className="flex justify-center items-center h-[55px] w-[220px] rounded-[50px] bg-teal-900 text-white hover:bg-teal-950 mt-[40px]">

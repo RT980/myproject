@@ -1,6 +1,8 @@
 
 import { NavLink } from 'react-router-dom'
 import image from "../assets/Image/image.png"
+import khaja from "../assets/Image/khaja.png"
+import food from "../assets/Image/food.jpg"
 import { FaFacebook } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
@@ -19,10 +21,11 @@ function Navigation() {
   console.log(totalCartItems)
   return (
     <div className='flex flex-row justify-around item-center bg-white shadow-2xs shadow-gray-300'>
-      <NavLink to={'/'} className="flex flex-row items-center gap-3 text-[#0C6967] text-[26px] font-bold">
-      <img src={image} alt=""  className='h-[45px]'/>
-      </NavLink>
+      <div className="flex flex-row items-center gap-3 text-[#0C6967] text-[26px] font-bold">
+      <img src={food} alt=""  className='h-[65px]'/>
+      </div>
       <div className='flex flex-row item-center gap-6 text-[20px] m-5  '>
+      <NavLink to={'/'}>Home</NavLink>
       <NavLink to={'/about'}>About</NavLink>
       <NavLink to={'/menu'}>Our Menu</NavLink>
       <NavLink to={'/service'}>Our Service</NavLink>

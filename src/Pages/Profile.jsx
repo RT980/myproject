@@ -23,9 +23,6 @@ function Profile() {
                             className="bg-red-500 text-white rounded-2xl p-2">Logout</button>
 
                     </div>
-
-
-
                 </div>
             )}
 

@@ -4,7 +4,7 @@ import background from "../assets/Allergy/background.png"
 import small from "../assets/Allergy/small.png"
 import qr from "../assets/Allergy/qr.png"
 import { FaMobileScreenButton } from "react-icons/fa6";
-import logo from "../assets/Image/image.png"
+import food from "../assets/Image/food.jpg"
 
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
@@ -145,13 +145,13 @@ function Allergy() {
       <div className='mt-[40px] h-[400px] bg-gray-100 p-[50px]'>
               <div className='flex justify-between items-center w-[1128px] h-[200px]'>
                 <div className='w-[408px] h-[192px]'>
-                  <img src={logo} alt="" className='w-[152px] h-[48px]' />
+                  <img src={food} alt="" className="h-[80px]" />
                   <p className='text-gray-500'>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nisi iusto unde quis quibusdam impedit ex facilis doloremque quaerat laudantium.
                   </p>
                 </div>
                 <div className='w-[168px] h-[158px] flex flex-col item-center'>
-                  <h1 className='text-[25px] text-teal-700'>Momos</h1>
+                  <h1 className='text-[25px] text-teal-700'>Links</h1>
                   <h3>About Us</h3>
                   <h3>Our Menu</h3>
                   <h3>Our Services</h3>
